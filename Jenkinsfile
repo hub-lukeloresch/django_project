@@ -1,11 +1,8 @@
 #!groovy
 node('master'){
-
-		try{
-		stage ('Checkout'){
-		checkout scm
-		sh "git rev-parse --short HEAD > .git/commit-id"
-		}
-		echo .git/commit-id
-		}
+	stage ('Checkout'){
+	checkout scm
+	sh "git rev-parse --short HEAD > .git/commit-id"
+	sh "echo .git/commit-id"
+	}
 }
